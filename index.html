@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국가 부서 선택 가이드 (인포그래픽)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Extended Warm Neutrals with Professional Blue and Green Accents -->
+    <!-- Application Structure Plan: A static, single-page infographic designed as a visual guide for students to select their government department roles. The layout uses a responsive grid system to present each department as an interactive card. The information is structured to first introduce core departments essential for any nation, followed by specialized departments that cater to specific student interests and career paths. This structure provides both foundational roles and diverse options, enabling a class of ~25 to find suitable positions easily. -->
+    <!-- Visualization & Content Choices: Report Info (Department roles, activities, career links) -> Goal (Inform, guide, inspire) -> Viz/Presentation (Visually distinct info cards with icons, tags, and clear hierarchies) -> Interaction (Hover effects on cards) -> Justification (An infographic card layout is highly scannable and visually appealing, making it easier for students to compare options and connect roles to their personal interests than a simple text list.) -> Library/Method (Tailwind CSS for styling). No JS needed for this static informational page. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
+        }
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        .department-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .department-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <header class="text-center my-8 md:my-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight">우리 국가의 미래를 설계할 부서를 선택하세요</h1>
+            <p class="text-lg text-gray-500 mt-4 max-w-3xl mx-auto">각 부서는 '멋진 신세계'의 문제점을 해결하고, 우리의 가치를 실현하는 중요한 역할을 합니다.<br>자신의 흥미와 진로를 고려하여 국가에 기여할 수 있는 부서를 찾아보세요.</p>
+        </header>
+
+        <main>
+            <!-- 핵심 부서 -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-center mb-2 text-blue-700">핵심 부서</h2>
+                <p class="text-center text-gray-500 mb-8">국가 운영의 뼈대를 이루는 필수적인 부서입니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-500">
+                        <div class="text-5xl mb-4">🏛️</div>
+                        <h3 class="text-2xl font-bold mb-2">행정입법부</h3>
+                        <p class="text-gray-600 mb-4">국가의 큰 방향을 결정하고, 헌법과 법률을 만듭니다.</p>
+                        <ul class="text-sm space-y-2 mb-4">
+                            <li class="flex items-start"><span class="font-bold text-blue-600 mr-2">▶</span> <strong>활동:</strong> 정부 형태 결정, 헌법 제정, 법률안 발의</li>
+                            <li class="flex items-start"><span class="font-bold text-blue-600 mr-2">▶</span> <strong>연결점:</strong> 독재가 아닌 민주적 의사결정 구조 설계</li>
+                        </ul>
+                        <div class="text-xs">
+                            <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#정치</span> <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#사회</span> <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#리더십</span>
+                        </div>
+                    </div>
+                    <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-green-500">
+                        <div class="text-5xl mb-4">💹</div>
+                        <h3 class="text-2xl font-bold mb-2">경제기획부</h3>
+                        <p class="text-gray-600 mb-4">경제 시스템을 설계하고 국가의 예산을 관리합니다.</p>
+                        <ul class="text-sm space-y-2 mb-4">
+                            <li class="flex items-start"><span class="font-bold text-green-600 mr-2">▶</span> <strong>활동:</strong> 화폐 발행, 세금 정책 수립, 산업 육성</li>
+                            <li class="flex items-start"><span class="font-bold text-green-600 mr-2">▶</span> <strong>연결점:</strong> 획일화된 소비 사회를 넘어선 대안 경제 모색</li>
+                        </ul>
+                        <div class="text-xs">
+                            <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#경제</span> <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#경영</span> <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#금융</span>
+                        </div>
+                    </div>
+                    <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-red-500">
+                        <div class="text-5xl mb-4">❤️</div>
+                        <h3 class="text-2xl font-bold mb-2">교육복지부</h3>
+                        <p class="text-gray-600 mb-4">국민의 성장과 행복, 건강한 삶을 책임집니다.</p>
+                        <ul class="text-sm space-y-2 mb-4">
+                            <li class="flex items-start"><span class="font-bold text-red-600 mr-2">▶</span> <strong>활동:</strong> 미래 교육 과정 설계, 복지 제도 구축</li>
+                            <li class="flex items-start"><span class="font-bold text-red-600 mr-2">▶</span> <strong>연결점:</strong> '소마'와 조건화 교육을 대체할 인간적인 대안 제시</li>
+                        </ul>
+                        <div class="text-xs">
+                           <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#교육</span> <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#복지</span> <span class="bg-gray-200 rounded-full px-3 py-1 font-semibold">#심리</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 특화 부서 -->
+            <section>
+                <h2 class="text-3xl font-bold text-center mb-2 text-purple-700">특화 부서</h2>
+                <p class="text-center text-gray-500 mb-8">우리 국가만의 개성과 전문성을 더해줄 부서입니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-purple-500">
+                        <div class="text-4xl mb-3">⚖️</div>
+                        <h4 class="text-xl font-bold mb-2">법무부</h4>
+                        <p class="text-sm text-gray-600 mb-3">정의를 실현하고 사회 질서를 유지합니다.</p>
+                        <ul class="text-xs space-y-1 mb-3">
+                            <li><strong>활동:</strong> 재판 제도 설계, 교정 시설 운영 방안 구상</li>
+                             <li><strong>진로:</strong> 판사, 검사, 변호사, 경찰</li>
+                        </ul>
+                    </div>
+                     <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-yellow-500">
+                        <div class="text-4xl mb-3">🔬</div>
+                        <h4 class="text-xl font-bold mb-2">과학기술부</h4>
+                        <p class="text-sm text-gray-600 mb-3">미래 기술을 연구하고 윤리 기준을 만듭니다.</p>
+                        <ul class="text-xs space-y-1 mb-3">
+                            <li><strong>활동:</strong> AI 윤리 강령 제정, 우주 탐사 계획 수립</li>
+                             <li><strong>진로:</strong> 과학자, 연구원, IT 개발자</li>
+                        </ul>
+                    </div>
+                    <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-pink-500">
+                        <div class="text-4xl mb-3">🎨</div>
+                        <h4 class="text-xl font-bold mb-2">문화예술부</h4>
+                        <p class="text-sm text-gray-600 mb-3">국민의 삶을 풍요롭게 하는 문화를 만듭니다.</p>
+                        <ul class="text-xs space-y-1 mb-3">
+                            <li><strong>활동:</strong> 국가(國歌) 제작, 국립 박물관/미술관 기획</li>
+                             <li><strong>진로:</strong> 예술가, 큐레이터, 콘텐츠 제작자</li>
+                        </ul>
+                    </div>
+                     <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-indigo-500">
+                        <div class="text-4xl mb-3">🌐</div>
+                        <h4 class="text-xl font-bold mb-2">외교부</h4>
+                        <p class="text-sm text-gray-600 mb-3">다른 국가(학급)와 우호적인 관계를 맺습니다.</p>
+                        <ul class="text-xs space-y-1 mb-3">
+                            <li><strong>활동:</strong> 모의 UN 총회 준비, 국가간 교류 협정 체결</li>
+                            <li><strong>진로:</strong> 외교관, 국제기구 종사자</li>
+                        </ul>
+                    </div>
+                     <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-green-600">
+                        <div class="text-4xl mb-3">🌳</div>
+                        <h4 class="text-xl font-bold mb-2">환경에너지부</h4>
+                        <p class="text-sm text-gray-600 mb-3">자연과 공존하며 지속가능한 발전을 이룹니다.</p>
+                        <ul class="text-xs space-y-1 mb-3">
+                            <li><strong>활동:</strong> 친환경 에너지 정책 수립, 국립공원 지정</li>
+                             <li><strong>진로:</strong> 환경공학자, 에너지 전문가</li>
+                        </ul>
+                    </div>
+                     <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-600">
+                        <div class="text-4xl mb-3">🏙️</div>
+                        <h4 class="text-xl font-bold mb-2">국토교통부</h4>
+                        <p class="text-sm text-gray-600 mb-3">살기 좋은 도시와 편리한 교통망을 구축합니다.</p>
+                        <ul class="text-xs space-y-1 mb-3">
+                            <li><strong>활동:</strong> 미래 도시 설계, 스마트 교통 시스템 구상</li>
+                            <li><strong>진로:</strong> 도시계획가, 건축가, 교통공학자</li>
+                        </ul>
+                    </div>
+                     <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-cyan-500">
+                        <div class="text-4xl mb-3">💡</div>
+                        <h4 class="text-xl font-bold mb-2">중소벤처기업부</h4>
+                        <p class="text-sm text-gray-600 mb-3">창의적인 아이디어가 비즈니스가 되도록 지원합니다.</p>
+                        <ul class="text-xs space-y-1 mb-3">
+                            <li><strong>활동:</strong> 스타트업 지원 정책 구상, 창업 경진대회 기획</li>
+                            <li><strong>진로:</strong> CEO, 벤처 투자자, 경영 컨설턴트</li>
+                        </ul>
+                    </div>
+                     <div class="department-card bg-white rounded-xl shadow-md p-6 border-t-4 border-orange-500">
+                        <div class="text-4xl mb-3">📢</div>
+                        <h4 class="text-xl font-bold mb-2">홍보처</h4>
+                        <p class="text-sm text-gray-600 mb-3">우리 국가의 매력을 널리 알리는 역할을 합니다.</p>
+                        <ul class="text-xs space-y-1 mb-3">
+                            <li><strong>활동:</strong> 국가 홍보 영상/포스터 제작, 국정 브리핑</li>
+                            <li><strong>진로:</strong> 언론인, 아나운서, 광고 전문가</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
