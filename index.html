@@ -68,7 +68,14 @@
             { id: 'public_relations', name: '홍보처', icon: '📢', color: 'orange-500', category: '특화', description: '우리 국가의 매력을 널리 알리는 역할을 합니다.', activity: '국가 홍보 영상/포스터 제작, 국정 브리핑', career: '언론인, 아나운서, 광고 전문가' }
         ];
         
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "...", authDomain: "...", projectId: "..." };
+        const firebaseConfig = {
+  apiKey: "AIzaSyAY8igiIcN97CWpLQX47ff5wgUD3cKxMrw",
+  authDomain: "brave-new-world21.firebaseapp.com",
+  projectId: "brave-new-world21",
+  storageBucket: "brave-new-world21.firebasestorage.app",
+  messagingSenderId: "165310781727",
+  appId: "1:165310781727:web:7137ee50c846bc45c1f82a",
+  measurementId: "G-PVM9YXHM04"
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-brave-new-world-app';
         
         const app = initializeApp(firebaseConfig);
